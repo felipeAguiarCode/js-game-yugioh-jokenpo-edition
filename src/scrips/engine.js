@@ -20,12 +20,12 @@ const states = {
 };
 
 const playerSides = {
-    player1:"player-field-card",
-    computer: "computer-field-card",
+    player1:"player-cards",
+    computer: "computer-cards",
     
 }
 
-const pathImages = ".src/assets/icons/";
+const pathImages = "./src/assets/icons/";
 
 const cardDate = [
    {
@@ -57,9 +57,32 @@ const cardDate = [
 
 ];
 
+async function getRandomCardId(){
+    const randomIndex = Math.floor(Math.random() * cardDate.length);
+    return cardDate[randomIndex].id;
+
+}
+
+async function creatCardImage(IdCard, fildSide){
+    const cardImage = document.createElement("img");
+    cardImage.setAttribute("heigth", "100px");
+    cardImage.setAttribute("src", "./src/essets/icons/card-back.png");
+    cardImage.setAttribute("data-id",IdCard);
+    cardImage.classList.add("card");
+
+    if(fildSide === playerSides.player1) {
+        cardImage.addEventListener("click",() => {
+            setCardsField(cardImage.getAttribute("data-id"));
+        });
+    }
+    cardImage.addEventListener("mouseover", () => {
+        drawSelectCard(IdCard);
+    });
+    return cardImage;
+}
 
 async function drawCards(cardNumbers, fildSide){
-    for(let i = 0; i < cardNumbers, i++) {
+    for(let i = 0; i < cardNumbers, i++){
         const randomIdCard = await getRandomCardId();
         const cardImage = await creatCardImage(randomIdCard,
         fildSide);
