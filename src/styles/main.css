@@ -1,7 +1,13 @@
 body{
     cursor: url("../assets/cursor/cursor.cur"),default;
 }
-
+button,
+a,
+imag:hover,
+button:hover,
+a:hover{
+    cursor: url("../assets/cursor/cursor.cur"),auto;
+}
 
 
 .bg-video{
