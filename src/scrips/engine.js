@@ -10,8 +10,8 @@ const states = {
         type: document.getElementById("card-type"),
     },
     fildeCards:{
-        player: documet.getElementById("player-filde-card"),
-        computer: documet.getElementById("computer-filde-card"),
+        player: documet.getElementById("player-field-card"),
+        computer: documet.getElementById("computer-field-card"),
     },
     playerSides:{
         player1:"player-cards",
@@ -94,16 +94,41 @@ async function setCardsField(cardId){
     await removeAllCardsImagens();
 
     let computerCardId = await getRandomCardId();
-    states.fildeCards.player.style.display = "block";
-    states.fildeCards.computer.style.display = "block";
-
-    states.fildeCards.player.src = cardDate[cardId].img;
-    states.fildeCards.computer.src = cardDate[computerCardId].img;
+    
+    await ShowHiddenCardFildsImages(true);
+    
+    await hiddenCardsDetails();
+    await drawCardsInfield(cardId, computerCardId);
 
     let duelResult = await checkDuelResult(cardId, computerCardId);
 
-   await updateScore();
+    await updateScore();
     await drawButton(duelResult);
+
+}
+
+async function drawCardsInfield(cardId, computerCardId){
+    states.fildeCards.player.src = cardDate[cardId].img;
+    states.fildeCards.computer.src = cardDate[computerCardId].img;
+}
+
+async function ShowHiddenCardFildsImages(value){
+    if(value === true){
+    states.fildeCards.player.style.display = "block";
+    states.fildeCards.computer.style.display = "block";
+    }
+
+    if(value === false){
+        states.fildeCards.player.style.display = "none";
+        states.fildeCards.computer.style.display = "none";
+    }
+}
+
+
+async function hiddenCardsDetails(){
+    states.cardSprints.avatar.src = "";
+    states.cardSprints.name.innerText = "";
+    states.cardSprints.type.innerText = "";
 
 }
 
@@ -123,15 +148,17 @@ async function checkDuelResult(){
     let playerCards = cardDate[playerCardId];
     if(playerCards.WinOf.includes(computerCardId)){
         duelResults = "win"
-        await playerAudio(duelResults)
+
         states.score.playerScore++; 
     }
 
     if(playerCards.LoseOf.includes(computerCardId)){
         duelResults = "lose"
-        await playerAudio(duelResults)
+
         states.score.computerScore++;
     }
+
+    await playerAudio(duelResults);
 
     return duelResults;
 }
@@ -178,17 +205,27 @@ async function resetDuel{
     states.fildeCards.player.style.display = "none";
     states.fildeCards.computer.style.display = "none";
 
+
     init()
 
 }
 
 async function playerAudio(status){
     const audio = new Audio(`./src/assets/audios/${status}.wav`)
-    audio.play();
+  
+    try{
+        audio.play();
+   }
+   catch{
+
+   }
+    
 }
 
 
 function init(){
+
+    ShowHiddenCardFildsImages(false);
     drawCards(5,playerSides.player1);
     drawCards(5,playerSides.computer);
 

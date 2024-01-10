@@ -106,9 +106,10 @@ font-size: 0.8rem;
 .card-versus__container{
     display: flex;
     flex-direction: column;
+    justify-items: center;
+    align-content: center;
     padding-top: .2rem;
     height: 300px;
-    margin-top: 5rem;
 }
 
 .versus-top,
@@ -137,9 +138,10 @@ font-size: 0.8rem;
     justify-content: space-around;
 }
 
-.card-infild{
+.card-infield{
     height: 11.2rem;
     width: 8rem;
+    border: 1px solid #fff;
     border-radius: 8px;
 
 }
