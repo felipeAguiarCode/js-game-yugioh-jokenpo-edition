@@ -45,14 +45,14 @@ a:hover{
 
 }
 
-.conteiner{
+.container{
     position: relative;
     z-index: 3;
     display: flex;
     height: 100vw;
 }
 
-.conteiner__left{
+.container__left{
     width: 35%;
     height: 100vh;
     min-width:300px;
@@ -63,7 +63,7 @@ a:hover{
     
 }
 
-.conteiner__right{
+.container__right{
 
     width: 65%;
 
@@ -105,7 +105,7 @@ font-size: 0.8rem;
 }
 
 
-.card-box__conteiner{
+.card-box__container{
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -165,6 +165,6 @@ font-size: 0.8rem;
 }
 
 
-.card::hover{
+.card:hover{
     transform: scale(1.2);
 }
