@@ -14,9 +14,9 @@ const states = {
         computer: document.getElementById("computer-field-card"),
     },
     playerSides:{
-        player1:"player-cards",
+        player1: "player-field-card",
         computerBOX: document.getElementById("player-cards"),
-        computer: "computer-cards",
+        computer: "computer-field-card",
         player1BOX: document.getElementById("computer-cards"),
 
     },
