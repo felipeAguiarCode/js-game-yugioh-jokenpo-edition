@@ -14,7 +14,7 @@ const states = {
         computer: document.getElementById("computer-field-card"),
     },
     playerSides:{
-        player1:"player-cards",
+        player1: "player-cards",
         computerBOX: document.getElementById("player-cards"),
         computer: "computer-cards",
         player1BOX: document.getElementById("computer-cards"),
@@ -33,7 +33,7 @@ const pathImages = "./src/assets/icons/";
 const cardDate = [
    {
     id: 0,
-    name: "Blue Eyes Dragon",
+    name: "Blue Eyes Wihite Dragon",
     type: "Paper",
     img: `${pathImages} + "dragon.png`,
     WinOf:[1],
@@ -53,7 +53,7 @@ const cardDate = [
     id: 2,
     name: "Exordia",
     type: "Scossors",
-    img: `${pathImages} + "exordia.png`,
+    img: `${pathImages} + "exodia.png`,
     WinOf:[0],
     LoseOf:[1],
    },

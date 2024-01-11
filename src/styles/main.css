@@ -1,12 +1,12 @@
 body{
-    cursor: url("../assets/cursor/cursor.cur"),default;
+    cursor: url("./assets/cursor/cursor.cur"),default;
 }
 button,
 a,
 imag:hover,
 button:hover,
 a:hover{
-    cursor: url("../assets/cursor/cursor.cur"),auto;
+    cursor: url("./assets/cursor/cursor.cur"),auto;
 }
 
 
@@ -29,7 +29,7 @@ a:hover{
 }
 
 .bg-video::after{
-    content: " ";
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
