@@ -35,7 +35,7 @@ const cardDate = [
     id: 0,
     name: "Blue Eyes Wihite Dragon",
     type: "Paper",
-    img: `${pathImages} + "dragon.png`,
+    img: `${pathImages}dragon.png`,
     WinOf:[1],
     LoseOf:[2],
 
@@ -44,7 +44,7 @@ const cardDate = [
     id: 1,
     name: "Dark Magician",
     type: "Rock",
-    img: `${pathImages} + "magician.png`,
+    img: `${pathImages}magician.png`,
     WinOf:[2],
     LoseOf:[0],
 
@@ -53,7 +53,7 @@ const cardDate = [
     id: 2,
     name: "Exordia",
     type: "Scossors",
-    img: `${pathImages} + "exodia.png`,
+    img: `${pathImages}exodia.png`,
     WinOf:[0],
     LoseOf:[1],
    },
