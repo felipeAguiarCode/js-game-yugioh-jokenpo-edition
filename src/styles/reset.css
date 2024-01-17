@@ -1,0 +1,9 @@
+*{
+    
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-family: 'Press Start 2P', cursive;
+    user-select: none;
+    box-sizing: border-box;
+}
